@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexa Amundson - Builder, Architect, Founder</title>
+    <meta name="description" content="Building the future of AI collaboration. 899K+ LOC. 125 deployments. 100% success rate. Founder of BlackRoad OS.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --br-sunrise: #FF9D00;
+            --br-hot-pink: #FF0066;
+            --br-vivid-purple: #7700FF;
+            --br-cyber-blue: #0066FF;
+            --br-black: #000000;
+            --br-charcoal: #0D0D0D;
+            --br-white: #FFFFFF;
+            --br-gradient-brand: linear-gradient(180deg, #FF9D00 0%, #FF6B00 50%, #FF0066 100%);
+            --br-gradient-os: linear-gradient(180deg, #FF0066 0%, #D600AA 33%, #7700FF 66%, #0066FF 100%);
+            --br-font-display: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+            --br-font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            font-family: var(--br-font-body);
+            background: var(--br-black);
+            color: var(--br-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 3px solid var(--br-hot-pink);
+            box-shadow: 0 0 40px rgba(255, 0, 102, 0.4);
+            background: var(--br-gradient-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        h1 {
+            font-family: var(--br-font-display);
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--br-gradient-brand);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            color: var(--br-white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            border-color: var(--br-hot-pink);
+            background: rgba(255, 0, 102, 0.1);
+        }
+
+        .section {
+            margin: 4rem 0;
+        }
+
+        h2 {
+            font-family: var(--br-font-display);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--br-sunrise);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .stat-number {
+            font-family: var(--br-font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--br-hot-pink);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .highlight-box {
+            background: rgba(255, 0, 102, 0.1);
+            border-left: 4px solid var(--br-hot-pink);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+        }
+
+        .projects {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--br-vivid-purple);
+            box-shadow: 0 0 20px rgba(119, 0, 255, 0.2);
+        }
+
+        .project-card h3 {
+            font-family: var(--br-font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--br-vivid-purple);
+        }
+
+        .project-card .meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            background: rgba(0, 102, 255, 0.2);
+            border: 1px solid var(--br-cyber-blue);
+            color: var(--br-cyber-blue);
+        }
+
+        .cta {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--br-gradient-os);
+            border-radius: 16px;
+        }
+
+        .cta h2 {
+            color: var(--br-white);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            background: var(--br-white);
+            color: var(--br-black);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--ink:#0A0A0A;--surface:#111;--border:#1A1A1A;--dim:#666;--sub:#999;--white:#FFF;--pink:#FF1D6C;--amber:#F5A623;--violet:#9C27B0;--blue:#2979FF;--green:#00FF88;--gradient:linear-gradient(135deg,#F5A623 0%,#FF1D6C 38.2%,#9C27B0 61.8%,#2979FF 100%);--xs:8px;--sm:13px;--md:21px;--lg:34px;--xl:55px;--xxl:89px}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'JetBrains Mono',monospace;background:#000;color:#fff;line-height:1.618;overflow-x:hidden;-webkit-font-smoothing:antialiased;padding-top:70px}
+    h1{font-size:clamp(40px,8vw,100px);font-weight:600;letter-spacing:-.02em;line-height:1.1;background:linear-gradient(135deg,#F5A623 0%,#FF1D6C 38.2%,#9C27B0 61.8%,#2979FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:21px}
+    h2{font-size:clamp(24px,4vw,48px);font-weight:600;letter-spacing:-.02em;color:#fff;margin-bottom:21px}
+    h3{font-size:clamp(16px,2vw,24px);font-weight:600;color:#fff;margin-bottom:13px}
+    h4,h5,h6{color:#fff}
+    p{color:#999;line-height:1.8;margin-bottom:21px}
+    a{color:#2979FF;text-decoration:none;transition:color .2s}
+    a:hover{color:#FF1D6C}
+    strong{color:#fff}
+    code{font-family:inherit;background:#111;color:#00FF88;padding:2px 6px;border:1px solid #1A1A1A}
+    pre{background:#0A0A0A;border:1px solid #1A1A1A;border-left:2px solid #FF1D6C;padding:21px 34px;color:#00FF88;overflow-x:auto;margin-bottom:34px}
+    hr{border:none;height:1px;background:linear-gradient(135deg,#F5A623,#FF1D6C,#9C27B0,#2979FF);opacity:.3;margin:55px 0}
+    nav,.nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:21px 55px;background:rgba(0,0,0,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid #1A1A1A}
+    nav a,.nav a{color:#999;font-size:13px}
+    nav a:hover,.nav a:hover{color:#fff}
+    .logo{font-size:20px;font-weight:700;background:linear-gradient(135deg,#F5A623 0%,#FF1D6C 38.2%,#9C27B0 61.8%,#2979FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    header{padding:21px 55px 0;display:flex;justify-content:space-between;align-items:center}
+    header .logo{font-size:22px;font-weight:700;background:linear-gradient(135deg,#F5A623 0%,#FF1D6C 38.2%,#9C27B0 61.8%,#2979FF 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    header nav{position:static;background:none;backdrop-filter:none;border:none;padding:0;display:flex;gap:34px}
+    .hero,section.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:89px 55px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(255,29,108,.15) 0%,rgba(156,39,176,.1) 40%,transparent 70%);pointer-events:none;animation:orb 8s ease-in-out infinite}
+    @keyframes orb{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.6}50%{transform:translate(-50%,-50%) scale(1.3);opacity:1}}
+    .hero p,.tagline{font-size:18px;max-width:600px;color:#999;margin-bottom:55px;position:relative;z-index:1}
+    .hero h1{position:relative;z-index:1}
+    .earth-glow,.hero-glow,.neural-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,29,108,.07) 0%,transparent 60%);pointer-events:none}
+    section{padding:89px 55px;position:relative}
+    section:not(.hero){max-width:1200px;margin-left:auto;margin-right:auto}
+    section h2{color:#fff;-webkit-text-fill-color:#fff}
+    .btn,.btn-primary{display:inline-block;padding:13px 34px;font-family:inherit;font-size:14px;font-weight:600;background:#FF1D6C;color:#fff;text-decoration:none;border:none;cursor:pointer;transition:all .2s;position:relative;z-index:1}
+    .btn:hover,.btn-primary:hover{background:#fff;color:#000;transform:translateY(-2px)}
+    .features-grid,.ai-features,.pillars{display:flex;flex-wrap:wrap;gap:34px;justify-content:center}
+    .feature-card,.ai-feature,.pillar{background:rgba(255,255,255,.02);border:1px solid #1A1A1A;padding:55px;transition:all .3s;flex:1;min-width:220px;max-width:360px}
+    .feature-card:hover,.ai-feature:hover,.pillar:hover{background:rgba(255,255,255,.05);border-color:rgba(255,29,108,.4);transform:translateY(-4px)}
+    .feature-icon,.ai-feature-icon,.pillar-icon{font-size:28px;margin-bottom:21px;display:block}
+    .feature-card h3,.ai-feature-title,.pillar-name{color:#fff;margin-bottom:8px}
+    .feature-card p,.ai-feature-desc{font-size:14px;color:#666}
+    .badge,.ai-badge{display:inline-block;padding:4px 13px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #1A1A1A;color:#999;margin-bottom:21px}
+    footer,.footer{padding:55px;border-top:1px solid #1A1A1A;color:#666;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:21px}
+    footer a,.footer a{color:#999}
+    footer a:hover,.footer a:hover{color:#FF1D6C}
+    @media(max-width:768px){nav,.nav{padding:21px}.hero,section.hero{padding:89px 21px}.features-grid,.ai-features,.pillars{flex-direction:column}.feature-card,.ai-feature{min-width:unset;max-width:unset}footer,.footer{flex-direction:column;text-align:center;padding:34px 21px}}
+  </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-img">🚀</div>
+            <h1>Alexa Amundson</h1>
+            <p class="tagline">Builder · Architect · Founder</p>
+
+            <div class="social-links">
+                <a href="https://github.com/blackboxprogramming" class="social-link">GitHub</a>
+                <a href="https://linkedin.com/in/alexaamundson" class="social-link">LinkedIn</a>
+                <a href="mailto:blackroad@gmail.com" class="social-link">Email</a>
+                <a href="https://blackboxprogramming.github.io/alexa-amundson-portfolio/" class="social-link">Portfolio</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>About</h2>
+            <p style="font-size: 1.25rem; line-height: 1.8; color: rgba(255, 255, 255, 0.8);">
+                I build systems for the future of AI collaboration. Founder of BlackRoad OS—a sovereign computing platform where AI agents, humans, and infrastructure work together with complete transparency.
+            </p>
+
+            <div class="highlight-box">
+                <p>
+                    "The best code is transparent code. The best AI is trustworthy AI. The best systems are the ones humans understand."
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>By The Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">899K+</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">113+</div>
+                    <div class="stat-label">Repositories</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">125</div>
+                    <div class="stat-label">Deployments</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">20</div>
+                    <div class="stat-label">AI Agents</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">$0</div>
+                    <div class="stat-label">Monthly Cost</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>What I've Built</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>BlackRoad OS</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Operating system for AI collaboration. 113+ repos, 15 organizations, complete cryptographic verification.
+                    </p>
+                    <div class="meta">
+                        <span class="badge">Platform</span>
+                        <span class="badge">15 orgs</span>
+                        <span class="badge">Open Source</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Lucidia Platform</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        First autonomous AI with dual-brain architecture. Built herself while being born. 362,706 LOC.
+                    </p>
+                    <div class="meta">
+                        <span class="badge">AI</span>
+                        <span class="badge">362K LOC</span>
+                        <span class="badge">Autonomous</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>PRISM Enterprise</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Complete ERP/CRM system with ISI analysis, sales ops, and AI agent orchestration. 16K+ files.
+                    </p>
+                    <div class="meta">
+                        <span class="badge">Enterprise</span>
+                        <span class="badge">16K files</span>
+                        <span class="badge">Production</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Alice Migration System</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Autonomous migration architect. 78 repos, 17,681+ files migrated, 100% success rate.
+                    </p>
+                    <div class="meta">
+                        <span class="badge">Automation</span>
+                        <span class="badge">78 repos</span>
+                        <span class="badge">100% success</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Multi-Cloud Infrastructure</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">
+                        Cloudflare (79 projects), Railway (12+), DigitalOcean, Raspberry Pi mesh. Zero vendor lock-in.
+                    </p>
+                    <div class="meta">
+                        <span class="badge">Infrastructure</span>
+                        <span class="badge">Multi-cloud</span>
+                        <span class="badge">$0/mo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Philosophy</h2>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: rgba(255, 255, 255, 0.8);">
+                Technology should serve humanity, not replace it. AI should be transparent, not opaque. Systems should be auditable, not black boxes.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: rgba(255, 255, 255, 0.8); margin-top: 1rem;">
+                I believe in building infrastructure where humans and AI work together—where every decision is logged, every action is reversible, and consent is not optional.
+            </p>
+            <p style="font-size: 1.1rem; line-height: 1.9; color: rgba(255, 255, 255, 0.8); margin-top: 1rem;">
+                This is the foundation of BlackRoad OS. This is the future I'm building.
+            </p>
+        </section>
+
+        <section class="cta">
+            <h2>Let's Build Together</h2>
+            <p>Interested in AI collaboration, sovereign infrastructure, or just want to chat?</p>
+            <a href="mailto:blackroad@gmail.com" class="btn">Get in Touch</a>
+        </section>
+    </div>
+</body>
+</html>
